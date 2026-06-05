@@ -1,472 +1,128 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-    padding: 40px 20px;
-    color: #e0e0e0;
-  }
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  h1 {
-    text-align: center;
-    font-size: 3.5em;
-    background: linear-gradient(135deg, #00d4ff, #7c3aed, #ff6b35);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 10px;
-    text-shadow: 0 0 30px rgba(0,212,255,0.3);
-  }
-  .subtitle {
-    text-align: center;
-    font-size: 1.3em;
-    color: #a0a0c0;
-    margin-bottom: 50px;
-  }
-  .badge-container {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .badge {
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 5px;
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  .roadmap-level {
-    margin-bottom: 60px;
-    position: relative;
-  }
-  .level-title {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 25px;
-    padding-left: 20px;
-    border-left: 8px solid;
-    border-image: linear-gradient(180deg, #00d4ff, #7c3aed);
-    border-image-slice: 1;
-  }
-  .level-0 .level-title { border-left-color: #00b4d8; }
-  .level-1 .level-title { border-left-color: #48cae4; }
-  .level-2 .level-title { border-left-color: #90e0ef; }
-  .level-3 .level-title { border-left-color: #fca311; }
-  .level-4 .level-title { border-left-color: #ff6b35; }
-  .level-5 .level-title { border-left-color: #7c3aed; }
-  
-  .module-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-  }
-  .module-card {
-    background: rgba(20, 25, 55, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 20px;
-    width: 320px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(0,212,255,0.2);
-  }
-  .module-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,212,255,0.2);
-    border-color: #00d4ff;
-  }
-  .module-icon {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
-  .module-title {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-bottom: 12px;
-    color: #00d4ff;
-  }
-  .module-subtopics {
-    font-size: 0.85em;
-    color: #b0b0d0;
-    line-height: 1.5;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .arrow-down {
-    text-align: center;
-    font-size: 2.5em;
-    margin: 20px 0;
-    animation: bounce 2s infinite;
-    color: #00d4ff;
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(15px); }
-  }
-  .progress-tracker {
-    background: rgba(0,0,0,0.4);
-    border-radius: 30px;
-    padding: 20px;
-    margin-top: 50px;
-    text-align: center;
-  }
-  .progress-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-  .step {
-    background: #1a1f3a;
-    border-radius: 40px;
-    padding: 12px 24px;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-  }
-  .step.completed {
-    background: linear-gradient(135deg, #00d4ff, #00a8cc);
-    color: #000;
-  }
-  .step.current {
-    border-color: #ff6b35;
-    animation: pulse 1.5s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,53,0.4); }
-    50% { box-shadow: 0 0 0 10px rgba(255,107,53,0); }
-  }
-  .step:hover {
-    transform: scale(1.05);
-  }
-  .visual-arrow {
-    font-size: 3em;
-    text-align: center;
-    color: #ff6b35;
-    margin: 10px 0;
-  }
-  hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00d4ff, #7c3aed, #ff6b35, transparent);
-    margin: 40px 0;
-  }
-</style>
-</head>
-<body>
-<div class="container">
+# C MASTERY COMPLETE
 
-  <h1>🚀 C MASTERY COMPLETE</h1>
-  <div class="subtitle">🎯 Your Visual Roadmap from Zero to Systems Expert</div>
-  
-  <div class="badge-container">
-    <span class="badge" style="background:#00599C;">⚡ C Language</span>
-    <span class="badge" style="background:#6E4C13;">🔧 Assembly</span>
-    <span class="badge" style="background:#FCC624; color:#000;">🐧 Linux</span>
-    <span class="badge" style="background:#7c3aed;">🎓 1337</span>
-    <span class="badge" style="background:#0066CC;">💾 Embedded</span>
-    <span class="badge" style="background:#ff6b35;">🔐 Security</span>
-  </div>
+**From Zero to Systems Expert** — 500+ topics · 27 phases · Hardware to kernel · 1337 ready
 
-  <hr>
+![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
+![Assembly](https://img.shields.io/badge/Assembly-6E4C13?style=flat-square&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![1337](https://img.shields.io/badge/1337-000000?style=flat-square&logo=42&logoColor=white)
+![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
 
-  <!-- LEVEL 0 -->
-  <div class="roadmap-level level-0">
-    <div class="level-title">📗 LEVEL 0: DIGITAL FUNDAMENTALS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">🔢</div>
-        <div class="module-title">00_Binary_Number_Systems</div>
-        <div class="module-subtopics">Binary • Hexadecimal • Two's Complement • Bitwise Ops • Endianness • IEEE754</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">💻</div>
-        <div class="module-title">01_CPU_Architecture</div>
-        <div class="module-subtopics">x86/ARM • RISC vs CISC • Pipelines • Branch Prediction • SIMD • Microarchitecture</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">🧠</div>
-        <div class="module-title">02_Registers_Memory</div>
-        <div class="module-subtopics">General/Special Registers • Cache Hierarchy • MESI • TLB • Virtual Memory • NUMA</div>
-      </div>
-    </div>
-  </div>
+---
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+## Visual Roadmap
 
-  <!-- LEVEL 1 -->
-  <div class="roadmap-level level-1">
-    <div class="level-title">⚙️ LEVEL 1: ASSEMBLY LANGUAGE</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">🛠️</div>
-        <div class="module-title">03_Assembly_Language</div>
-        <div class="module-subtopics">MOV • PUSH/POP • Arithmetic • Jumps • CALL/RET • SIMD (SSE/AVX) • Stack Frames • Calling Conventions • NASM/objdump/GDB</div>
-      </div>
-    </div>
-  </div>
+![C Mastery Complete Roadmap](c_mastery_roadmap.svg)
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+---
 
-  <!-- LEVEL 2 -->
-  <div class="roadmap-level level-2">
-    <div class="level-title">💎 LEVEL 2: C LANGUAGE CORE</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">📝</div>
-        <div class="module-title">04_C_Language_Core</div>
-        <div class="module-subtopics">Compilation Process • Data Types • Operators • Control Flow • Functions • Arrays • Strings • Preprocessor • Header Files • Standard Library</div>
-      </div>
-    </div>
-  </div>
+## What Is This?
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+This repository is a self-driven, folder-by-folder learning framework for mastering C and low-level systems engineering from the ground up.
 
-  <!-- LEVEL 3 -->
-  <div class="roadmap-level level-3">
-    <div class="level-title">🎯 LEVEL 3: MEMORY & POINTERS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">📍</div>
-        <div class="module-title">05_Memory_Management</div>
-        <div class="module-subtopics">Memory Layout (Text/Data/BSS/Stack/Heap) • malloc/calloc/realloc/free • Allocators (dlmalloc/jemalloc) • Fragmentation • Valgrind • ASAN/MSan</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">🪡</div>
-        <div class="module-title">06_Pointers</div>
-        <div class="module-subtopics">Address-of & Dereference • Pointer Arithmetic • Double/Triple Pointers • Function Pointers • Void Pointers • Self-referential Structs</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">🏗️</div>
-        <div class="module-title">07_Structs_Unions_Enums</div>
-        <div class="module-subtopics">Struct Padding & Packing • Bit Fields • Unions (memory sharing) • Enums • typedef • Opaque Types</div>
-      </div>
-    </div>
-  </div>
+Every directory is an empty module. **You populate it** — your code, your notes, your implementations, your debugging labs. The roadmap above is the blueprint. This repo is the execution.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+---
 
-  <!-- LEVEL 4 -->
-  <div class="roadmap-level level-4">
-    <div class="level-title">🔧 LEVEL 4: SYSTEMS PROGRAMMING</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">💾</div>
-        <div class="module-title">08_File_IO_System_Calls</div>
-        <div class="module-subtopics">File Descriptors • open/read/write/close • lseek • dup/dup2 • stat • Directory Ops • sendfile (zero-copy)</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">🔄</div>
-        <div class="module-title">09_Process_Management</div>
-        <div class="module-subtopics">fork() • exec() • wait() • Zombies/Orphans • Daemons • Process Groups • CPU Affinity</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">📡</div>
-        <div class="module-title">10_Signals_IPC</div>
-        <div class="module-subtopics">Signals (SIGINT/SIGKILL) • Pipes (named/unnamed) • Shared Memory • Message Queues • Semaphores • mmap()</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">🧵</div>
-        <div class="module-title">11_Multithreading</div>
-        <div class="module-subtopics">pthread_create/join • Mutexes • Condition Variables • RW Locks • Race Conditions • Deadlocks • Thread Pools • TSan</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">🌐</div>
-        <div class="module-title">12_Network_Programming</div>
-        <div class="module-subtopics">Sockets (TCP/UDP) • bind/listen/accept • send/recv • select/poll/epoll • Non-blocking I/O • HTTP • TLS/SSL</div>
-      </div>
-    </div>
-  </div>
+## The Learning Path
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 00–02 — Hardware Foundations
 
-  <!-- LEVEL 5 -->
-  <div class="roadmap-level level-5">
-    <div class="level-title">📊 LEVEL 5: DATA STRUCTURES & ALGORITHMS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">📚</div>
-        <div class="module-title">13_Data_Structures</div>
-        <div class="module-subtopics">Big O • Linked Lists • Stacks/Queues • Trees (BST/AVL/Red-Black/B-Tree) • Hash Tables • Graphs • Tries • Segment/Fenwick Trees • Union-Find</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">⚡</div>
-        <div class="module-title">14_Algorithms</div>
-        <div class="module-subtopics">Sorting (Merge/Quick/Heap/Radix) • Binary Search • KMP/Boyer-Moore • Dynamic Programming • Greedy • Backtracking • Dijkstra • Bit Manipulation</div>
-      </div>
-    </div>
-  </div>
+Before writing a single line of C, you need to understand the machine underneath it. These phases cover everything the CPU actually does: how numbers are stored in binary, how the processor fetches and executes instructions, how registers and caches work, and how virtual memory maps to physical RAM. This is the layer most programmers skip — and the one that separates systems engineers from everyone else.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 03 — Assembly Language
 
-  <!-- LEVEL 6 -->
-  <div class="roadmap-level level-0">
-    <div class="level-title">🐛 LEVEL 6: DEBUGGING & PROFILING</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">🔍</div>
-        <div class="module-title">15_Debugging_Profiling_Build</div>
-        <div class="module-subtopics">GDB (complete) • Valgrind (memcheck/callgrind) • strace/ltrace • perf • Flame Graphs • Makefiles • CMake • Static/Dynamic Libs • objdump/readelf • gcov</div>
-      </div>
-    </div>
-  </div>
+Drop down to the metal. You write raw x86_64 instructions, manage the hardware stack yourself, and learn exactly what the compiler generates from your C code. Calling conventions, stack frames, SIMD registers — you understand them not from documentation but from writing them by hand.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 04 — C Language Core
 
-  <!-- LEVEL 7 -->
-  <div class="roadmap-level level-4">
-    <div class="level-title">🔐 LEVEL 7: OPTIMIZATION & SECURITY</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">⚡</div>
-        <div class="module-title">16_Optimization_Security</div>
-        <div class="module-subtopics">Cache-friendly Code • Loop Optimization • Branch Prediction • SIMD Optimization • Compiler Flags (O0-O3/PGO) • Lock-free Programming • Buffer Overflow • ROP • Canary Values • Secure Coding • Fuzzing</div>
-      </div>
-    </div>
-  </div>
+The full C toolchain from preprocessor to binary. Types, scope, storage classes, pointers, functions, strings, macros, and the standard library. The focus here is on understanding what the compiler does with your code, not just writing code that compiles.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 05–07 — Memory Architecture & Pointers
 
-  <!-- LEVEL 8 -->
-  <div class="roadmap-level level-1">
-    <div class="level-title">🐧 LEVEL 8: LINUX KERNEL & OS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">⚙️</div>
-        <div class="module-title">17_Linux_Kernel_and_OS</div>
-        <div class="module-subtopics">Kernel Architecture • System Calls • Context Switching • CFS Scheduler • Page Cache • SLUB Allocator • VFS • ext4 • Device Drivers • Kernel Modules • cgroups/namespaces • seccomp • kgdb/ftrace</div>
-      </div>
-    </div>
-  </div>
+The most important section for any serious C programmer. You map out the Text, Data, BSS, Stack, and Heap segments. You master multi-level pointer indirection, function pointers, void pointers, struct padding and alignment rules, and how memory allocators like `dlmalloc` and `jemalloc` actually work under the hood.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 08–12 — Systems Programming
 
-  <!-- LEVEL 9 -->
-  <div class="roadmap-level level-2">
-    <div class="level-title">🔌 LEVEL 9: EMBEDDED SYSTEMS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">📟</div>
-        <div class="module-title">18_Embedded_Systems</div>
-        <div class="module-subtopics">ARM Cortex-M/AVR • GPIO • Interrupts (NVIC) • Timers/PWM • ADC/DAC • UART/SPI/I2C/CAN • FreeRTOS • Bare Metal • Bootloaders • JTAG/OpenOCD • OTA Updates</div>
-      </div>
-    </div>
-  </div>
+This is where C meets the OS. You interact with the kernel directly through system calls: file descriptors, unbuffered I/O, `fork`/`exec`/`wait`, signal handling, named and unnamed pipes, shared memory, semaphores, and `mmap`. Then you add concurrency: POSIX threads, mutexes, condition variables, atomic operations, and race condition detection with TSan. Finally, network programming: TCP/UDP sockets, non-blocking I/O, and Linux `epoll` for high-performance multiplexing.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 13–14 — Data Structures & Algorithms
 
-  <!-- LEVEL 10 -->
-  <div class="roadmap-level level-3">
-    <div class="level-title">🎓 LEVEL 10: 1337 PISCINE PROJECTS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">🏊</div>
-        <div class="module-title">19_1337_Piscine_Projects</div>
-        <div class="module-subtopics">42 Norm Rules • Moulinette • C00-C13 • Rush00/Rush01 • Custom printf • Linked Lists • Build Systems • File Ops • Function Pointers</div>
-      </div>
-    </div>
-  </div>
+Built from scratch in C. Linked lists, stacks, queues, hash tables with collision resolution, BSTs, AVL trees, Red-Black trees, graphs, tries, segment trees, and union-find. Sorting algorithms analyzed for cache behavior. String matching with KMP and Rabin-Karp. Dynamic programming and greedy approaches with explicit time/space complexity bounds.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 15 — Debugging & Build Toolchains
 
-  <!-- LEVEL 11 -->
-  <div class="roadmap-level level-4">
-    <div class="level-title">💪 LEVEL 11: PRACTICE & EXAMS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">📝</div>
-        <div class="module-title">20_Practice_Problems</div>
-        <div class="module-subtopics">Easy/Medium/Hard Problems • Arrays/Strings • Pointers/Memory • Data Structures • Algorithms • System Programming • Interview Questions</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">📋</div>
-        <div class="module-title">21_Exams_Evaluation</div>
-        <div class="module-subtopics">Exam Format • Common Problems • Time Management • Norm Violations • Previous Questions • Mock Exams</div>
-      </div>
-    </div>
-  </div>
+You cannot write serious C without mastering your tools. Full GDB workflow, Valgrind memcheck and callgrind, `strace`/`ltrace` for syscall tracing, `perf` and flame graphs for performance profiling. Makefiles, CMake, static and shared libraries, `objdump`/`readelf` for binary inspection, and `gcov` for code coverage.
 
-  <div class="visual-arrow">⬇️ ⬇️ ⬇️</div>
+### Phase 16 — Optimization & Security
 
-  <!-- LEVEL 12 -->
-  <div class="roadmap-level level-5">
-    <div class="level-title">🚀 LEVEL 12: REAL WORLD PROJECTS</div>
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-icon">🛠️</div>
-        <div class="module-title">22_Real_World_Projects</div>
-        <div class="module-subtopics">Mini Shell • HTTP Server • Custom malloc • File Manager • System Monitor • Network Utilities</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">📚</div>
-        <div class="module-title">23_Resources_References</div>
-        <div class="module-subtopics">Books • Courses • YouTube Channels • Man Pages • Cheat Sheets • GDB/Valgrind Cheatsheets • Makefile Templates • 42 Norm Cheatsheet</div>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">⚙️</div>
-        <div class="module-title">24_Tools_Setup</div>
-        <div class="module-subtopics">GCC/Clang • GDB • Valgrind • Docker • Git Workflow • Editor/IDE Config</div>
-      </div>
-    </div>
-  </div>
+Cache-friendly data layout, loop unrolling, SIMD vectorization hints, PGO and LTO compiler passes, and lock-free programming with atomics. On the security side: stack buffer overflows, format string vulnerabilities, Return-Oriented Programming (ROP) chain construction, ASLR bypass techniques, stack canaries, and fuzzing with static analysis.
 
-  <hr>
+### Phase 17 — Linux Kernel & OS Internals
 
-  <!-- PROGRESS TRACKER -->
-  <div class="progress-tracker">
-    <h3 style="margin-bottom: 20px;">🎯 Track Your Progress</h3>
-    <div class="progress-steps">
-      <div class="step completed">✅ Fundamentals</div>
-      <div class="step">⬜ Assembly</div>
-      <div class="step">⬜ C Core</div>
-      <div class="step">⬜ Memory</div>
-      <div class="step">⬜ Pointers</div>
-      <div class="step">⬜ Systems</div>
-      <div class="step">⬜ Threads</div>
-      <div class="step">⬜ Network</div>
-      <div class="step">⬜ DS/Algo</div>
-      <div class="step">⬜ Debugging</div>
-      <div class="step">⬜ Security</div>
-      <div class="step">⬜ Kernel</div>
-      <div class="step">⬜ Embedded</div>
-      <div class="step">⬜ 1337</div>
-      <div class="step">⬜ Projects</div>
-    </div>
-    <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">⭐ Click on steps to mark your progress (local storage)</p>
-  </div>
+System call interface, context switching, the Completely Fair Scheduler, page cache, the SLUB allocator, VFS layer, ext4, writing and loading Linux Kernel Modules, procfs/sysfs, namespaces and cgroups for containerization, seccomp filtering, and kernel debugging with kgdb and ftrace.
 
-  <hr>
+### Phase 18 — Embedded Systems
 
-  <div style="text-align: center; margin-top: 50px; padding: 30px; background: rgba(0,212,255,0.1); border-radius: 20px;">
-    <p style="font-size: 1.5em;">🎯 <strong>Each folder is a learning module</strong> — YOU add the code, notes, and resources!</p>
-    <p style="margin-top: 15px;">⭐ Star this repo to save your journey from Zero to Systems Expert! ⭐</p>
-  </div>
+Bare-metal ARM Cortex-M programming. GPIO, NVIC interrupt controllers, timers and PWM, ADC/DAC, UART/SPI/I2C/CAN bus communication. FreeRTOS task scheduling, bootloader development, JTAG debugging with OpenOCD, and OTA firmware update pipelines.
 
-</div>
+### Phase 19 — 1337 Piscine Projects
 
-<script>
-  // Progress tracker functionality
-  const steps = document.querySelectorAll('.step');
-  steps.forEach(step => {
-    step.addEventListener('click', function() {
-      if (this.classList.contains('completed')) {
-        this.classList.remove('completed');
-        this.innerHTML = this.innerHTML.replace('✅', '⬜');
-      } else {
-        this.classList.add('completed');
-        this.innerHTML = this.innerHTML.replace('⬜', '✅');
-      }
-    });
-  });
-</script>
+The full 42 Norm compliance workflow. Moulinette-ready implementations from C00 through C13, Rush00 and Rush01, custom `ft_printf`, linked list management, and build system projects. Everything tested against automated validators under strict style rules.
 
-</body>
-</html>
+### Phases 20–24 — Practice, Exams & Real Projects
+
+Coding challenges scaled from easy to hard, mock exam sandboxes timed to 1337 evaluation constraints, and production-grade project implementations: a POSIX mini-shell with pipelining, a multithreaded HTTP server, a custom `malloc` engine built on `mmap`, and a system monitor utility. The repository closes with curated reference cheat sheets for GDB, Valgrind, Makefiles, and the 42 Norm.
+
+---
+
+## Module Index
+
+| # | Module | Key Topics |
+|---|--------|------------|
+| 00 | Binary & Number Systems | Binary, hex, two's complement, bitwise ops, endianness, IEEE 754 |
+| 01 | CPU Architecture | x86/ARM, CISC vs RISC, pipelines, branch prediction, SIMD |
+| 02 | Registers & Memory | Cache hierarchy, MESI, TLB, virtual memory, NUMA |
+| 03 | Assembly Language | MOV/PUSH/POP, jumps, CALL/RET, stack frames, SSE/AVX |
+| 04 | C Language Core | Toolchain, types, control flow, macros, standard library |
+| 05 | Memory Management | Stack/heap layout, malloc/free, allocators, Valgrind, ASAN |
+| 06 | Pointers | Arithmetic, double/triple pointers, function pointers, void* |
+| 07 | Structs / Unions / Enums | Padding, packing, bit fields, opaque types |
+| 08 | File I/O & Syscalls | File descriptors, open/read/write/close, dup2, sendfile |
+| 09 | Process Management | fork/exec/wait, zombies, daemons, CPU affinity |
+| 10 | Signals & IPC | Signals, pipes, shared memory, semaphores, mmap |
+| 11 | Multithreading | pthreads, mutexes, condition vars, atomics, TSan |
+| 12 | Network Programming | TCP/UDP sockets, select/poll/epoll, HTTP, TLS |
+| 13 | Data Structures | Lists, trees (AVL/RB/B), hash tables, graphs, tries |
+| 14 | Algorithms | Sorting, KMP, DP, greedy, backtracking, Dijkstra |
+| 15 | Debugging & Build | GDB, Valgrind, strace, perf, flame graphs, Make/CMake |
+| 16 | Optimization & Security | Cache layout, SIMD, buffer overflow, ROP, fuzzing |
+| 17 | Linux Kernel & OS | Syscall layer, CFS, VFS, kernel modules, cgroups |
+| 18 | Embedded Systems | ARM bare-metal, GPIO, FreeRTOS, JTAG, bootloaders |
+| 19 | 1337 Piscine Projects | C00–C13, Rush00/01, ft_printf, 42 Norm compliance |
+| 20 | Practice Problems | Easy/medium/hard challenges by topic |
+| 21 | Exams & Evaluation | Mock exams, time management, norm violation list |
+| 22 | Real World Projects | Mini shell, HTTP server, custom malloc, system monitor |
+| 23 | Resources & References | Books, cheat sheets, man pages, GDB/Valgrind quick refs |
+| 24 | Tools & Setup | GCC/Clang, GDB init, Valgrind profiles, Docker, Git |
+
+---
+
+## How to Use This Repo
+
+1. Clone it locally
+2. Make sure `c_mastery_roadmap.svg` sits in the root next to this file
+3. Start at `00_Binary_Number_Systems/` and work forward
+4. Add your own code, notes, and implementations to each folder as you go
+5. Commit your progress regularly
+
+```bash
+git clone https://github.com/0xMedl/C-Mastery-Complete
+cd C-Mastery-Complete
+# Start learning — populate the modules as you go
+```
+
+---
+
+> Built for mastering C, low-level engineering, systems programming, and the 1337/42 curriculum.
+> Star the repo to track your journey.
