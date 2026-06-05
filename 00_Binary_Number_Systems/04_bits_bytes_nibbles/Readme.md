@@ -1,6 +1,6 @@
-# 01 — Bits, Bytes & Nibbles
+# 04 — Bits, Bytes & Nibbles
 
-> **C Mastery Complete** › Module 01
+> **C Mastery Complete** › Module 04
 > *Before numbers, before hex, before memory — everything starts with bits.*
 
 ---
