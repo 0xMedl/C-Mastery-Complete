@@ -110,11 +110,6 @@ Coding challenges scaled from easy to hard, mock exam sandboxes timed to 1337 ev
 
 ## How to Use This Repo
 
-1. Clone it locally
-2. Make sure `c_mastery_roadmap.svg` sits in the root next to this file
-3. Start at `00_Binary_Number_Systems/` and work forward
-4. Add your own code, notes, and implementations to each folder as you go
-5. Commit your progress regularly
 
 ```bash
 git clone https://github.com/0xMedl/C-Mastery-Complete
